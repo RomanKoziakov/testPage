@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Inter";
+    src: url(Fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter 500";
+    src: url(Fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-weight: 500;
+    font-style: medium;
+}
+
 * {
     font-family: "Inter";
 }
@@ -8,11 +22,91 @@ html {
   margin: 0;
 }
 
+.dropbtn {
+  background-color: white;
+  color: #354153;
+  font-size: 16px;
+  border: 1px solid #EAECF0;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px; 
+}
+
+.dropbtn > img {
+  width: 16px;
+  height: 16px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgba(128, 128, 128, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 230px;
+  height: 128px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 2%;
+  border-radius: 10px;
+}
+
+.show {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.dropdown-content div {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content p {
+  color: black;
+  padding: 0;
+  margin: 0;
+  height: auto;
+}
+
+.dropdown-content div:hover {
+    background-color: #ddd;   
+    border-radius: 10px;
+}
+
+.middle-type {
+    user-select: none;
+    margin-top: 3%;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #354153;
+}
+
+.sidebar-input{
+    padding: 0px 20px;
+    font-size: 14px;
+}
+
 .news-item {
-    border: 1px solid #ccc;
+    border: 1px solid #EAECF0;
     border-radius: 10px;
     margin-top: 2vh;
-    width: 370px; /* фиксированная ширина */
+    width: 370px;
     min-width: 370px;
     height: auto;
     min-height: 31vh;
@@ -33,7 +127,30 @@ html {
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #EAECF0;
+}
+
+#mainUl {
+    user-select: none; 
+    margin-top: 8%; 
+    border-radius: 5px; 
+    background-color: #F2F4F7; 
+    height: 30px; 
+    line-height: 30px;
+}
+
+#mainUl > p {
+    margin: 0;
+    color: #0D1421; 
+    font-family: 'Inter 500'; 
+    padding-left: 10px;
+}
+
+#items-div {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-evenly; 
+    margin-top: 2wh;
 }
 
 body {
@@ -45,10 +162,11 @@ body {
     overflow-x: hidden;
 }
 
+
 .sidebar {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #EAECF0;
     justify-content: space-between;
     padding-right: 16px;
     padding-left: 16px;
@@ -74,44 +192,35 @@ body {
     width: 100%;
 }
 
-.custom-select {
-    border-radius: 5px;
-    background-color: white;
-    border-color: rgb(206, 206, 206);
-    border-top-color: rgb(206, 206, 206);
-    border-top-width: 1px;
-    border-width: 1px;
-    height: 30px;
-}
-
 .news-types {
     display: flex;
-    flex-direction: column; 
-    list-style-type: none;
+    flex-direction: column;
+    padding-left: 10%;
+    gap: 1vh;
 }
 
-.news-types li {
-    margin-bottom: 10px;
-    color: #354153;
-}
-
-.news-item header {
+.news-item div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.news-item header :first-child {
+.news-item div :first-child {
+    color: #667085;
     padding-left: 6%;
+    user-select: none;
 }
 
-.news-item header :last-child {
+.news-item div :last-child {
+    color: #667085;
     padding-right: 6%;
+    user-select: none;
 }
 
 .news-item img {
     margin-left: 7%;
+    user-select: none;
 }
 
 .news-head {
@@ -121,6 +230,7 @@ body {
     color: #0D1421;
     font-weight: 300;
     font-family: 'Inter 500';
+    user-select: none;
 }
 
 .news-item-description {
@@ -128,18 +238,5 @@ body {
     margin-right: 7%;
     font-size: 18px;
     color: #354153;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url(Fonts/Inter-VariableFont_opsz\,wght.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Inter 500";
-    src: url(Fonts/Inter-VariableFont_opsz\,wght.ttf);
-    font-weight: 500;
-    font-style: medium;
+    user-select: none;
 }
